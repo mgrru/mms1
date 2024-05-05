@@ -1,0 +1,3 @@
+<template>
+    Delete User
+</template>
