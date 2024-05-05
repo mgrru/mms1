@@ -23,7 +23,7 @@ const beforeAvatarUpload: UploadProps['beforeUpload'] = (rawFile) => {
     ElMessage.error('必须是 jpg/png 格式！')
     return false
   } else if (rawFile.size / 1024 / 1024 > 5) {
-    ElMessage.error('不能超过 2MB!')
+    ElMessage.error('不能超过 5MB!')
     return false
   }
   imageUrl.value = URL.createObjectURL(rawFile!);
