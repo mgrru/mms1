@@ -5,7 +5,6 @@ import LogView from '@/components/log/log.vue'
 import AddView from '@/components/user/add.vue'
 import SelectView from '@/components/user/select.vue'
 import UpdateView from '@/components/user/update.vue'
-import DeleteView from '@/components/user/del.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
