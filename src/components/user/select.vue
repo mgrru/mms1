@@ -48,6 +48,7 @@ const handleDelete = (index: number, row: User) => {
     })
         .then(function (res) {
             selectUser()
+            alert(res.data)
         })
         .catch(function (err) {
             console.log("err",err)

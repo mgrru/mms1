@@ -25,6 +25,8 @@ const submit = () => {
     axios.postForm("/api/user/add", {
         name: formData.name,
         file: formData.file,
+    }).then(function(res){
+        alert(res.data)
     })
 }
 
