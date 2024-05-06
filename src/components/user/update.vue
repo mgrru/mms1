@@ -1,3 +1,44 @@
 <template>
-    Update User
+    <el-form label-position="top" label-width="auto" :model="formData" style="max-width: 300px">
+        <el-form-item label="ID">
+            <el-input v-model="formData.id" disabled />
+        </el-form-item>
+        <el-form-item label="Name">
+            <el-input v-model="formData.name" />
+        </el-form-item>
+        <el-form-item label="Photo">
+            <Upload v-model="formData.file" />
+        </el-form-item>
+        <el-button type="primary" @click="submit()">提交</el-button>
+        <el-button type="primary" @click="reset()">重置</el-button>
+    </el-form>
 </template>
+
+<script setup lang="ts">
+import axios from 'axios';
+import Upload from './extra/upload.vue';
+import { reactive, ref, watch } from 'vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const formData = reactive({
+    id: route.params.id,
+    name: route.params.name,
+    file: null,
+})
+
+const submit = () => {
+    axios.postForm("/api/user/update", {
+        id: formData.id,
+        name: formData.name,
+        file: formData.file,
+    }).then(function (res) {
+        alert(res.data)
+    })
+}
+
+const reset = () => {
+    formData.name = ''
+}
+</script>

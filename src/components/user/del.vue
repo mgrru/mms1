@@ -1,3 +1,0 @@
-<template>
-    Delete User
-</template>

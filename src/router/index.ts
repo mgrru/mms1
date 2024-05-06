@@ -50,12 +50,10 @@ const router = createRouter({
           component: AddView
         },
         {
-          path: '/user/update',
-          component: UpdateView
-        },
-        {
-          path: '/user/del',
-          component: DeleteView
+          path: '/user/update/:id/:name',
+          name:'update',
+          component: UpdateView,
+          props: true
         },
         {
           path: '/user/select',

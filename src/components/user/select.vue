@@ -25,6 +25,7 @@
 </template>
 
 <script lang="ts" setup>
+import router from '@/router';
 import axios from 'axios';
 import { onMounted, reactive } from 'vue';
 
@@ -37,21 +38,22 @@ interface User {
 
 const handleEdit = (index: number, row: User) => {
     console.log("handleEdit", index, row)
+    router.push({ name: "update", params: { id: row.id, name: row.name } })
 }
 const handleDelete = (index: number, row: User) => {
     console.log("handleDelete", index, row)
     axios.post("/api/user/del", {
-        id:row.id,
-        name:row.name,
-        photo:row.photo,
-        path:row.path,
+        id: row.id,
+        name: row.name,
+        photo: row.photo,
+        path: row.path,
     })
         .then(function (res) {
             selectUser()
             alert(res.data)
         })
         .catch(function (err) {
-            console.log("err",err)
+            console.log("err", err)
         })
 }
 
