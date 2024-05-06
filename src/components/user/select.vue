@@ -1,5 +1,5 @@
 <template>
-    <el-table :data="tableData" height="250" style="width: 100%" table-layout="auto">
+    <el-table :data="tableData" height="750px" style="width: 100%" table-layout="auto">
         <el-table-column label="ID">
             <template #default="scope">
                 <div style="display: flex; align-items: center">
@@ -36,10 +36,22 @@ interface User {
 }
 
 const handleEdit = (index: number, row: User) => {
-    console.log(index, row)
+    console.log("handleEdit", index, row)
 }
 const handleDelete = (index: number, row: User) => {
-    console.log(index, row)
+    console.log("handleDelete", index, row)
+    axios.post("/api/user/del", {
+        id:row.id,
+        name:row.name,
+        photo:row.photo,
+        path:row.path,
+    })
+        .then(function (res) {
+            selectUser()
+        })
+        .catch(function (err) {
+            console.log("err",err)
+        })
 }
 
 let tableData: User[] = reactive([]);

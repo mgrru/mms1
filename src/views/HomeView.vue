@@ -64,10 +64,10 @@
 
 
 const handleOpen = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+  console.log("handleOpen", key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
-  console.log(key, keyPath)
+  console.log("handleClose", key, keyPath)
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-    <el-table :data="tableData" height="250" style="width: 100%" table-layout="auto">
+    <el-table :data="tableData" height="750px" style="width: 100%" table-layout="auto">
         <el-table-column label="Time" >
             <template #default="scope">
                 <div style="display: flex; align-items: center">
