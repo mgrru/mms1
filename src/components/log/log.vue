@@ -24,13 +24,6 @@ interface Log {
     desc: string
 }
 
-const handleEdit = (index: number, row: Log) => {
-    console.log(index, row)
-}
-const handleDelete = (index: number, row: Log) => {
-    console.log(index, row)
-}
-
 let tableData: Log[] = reactive([]);
 
 const selectLog = () => {

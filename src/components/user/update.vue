@@ -17,7 +17,7 @@
 <script setup lang="ts">
 import axios from 'axios';
 import Upload from './extra/upload.vue';
-import { reactive, ref, watch } from 'vue';
+import { reactive } from 'vue';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
