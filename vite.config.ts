@@ -9,6 +9,7 @@ export default defineConfig({
     vue(),
   ],
   server: {
+    open: true,
     proxy: {
       '/api': {
         target: 'http://localhost:8080/ssm_war_exploded',
